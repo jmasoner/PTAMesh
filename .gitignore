@@ -1,0 +1,6 @@
+# Node and WordPress ignores 
+node_modules/
+vendor/
+.DS_Store
+*.log
+wordpress/assets/build/

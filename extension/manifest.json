@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "PTAMesh — Add to Inventory",
+  "version": "0.1.0",
+  "description": "Capture Amazon product data and push to ProTraxer WooCommerce inventory.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://www.amazon.com/*", "https://*.amazon.*/*", "https://YOURDOMAIN.com/*"],
+  "action": {
+    "default_title": "PTAMesh",
+    "default_popup": ""
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.amazon.com/*", "https://*.amazon.*/*"],
+      "js": ["content.js"],
+      "css": ["ui.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
