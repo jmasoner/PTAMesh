@@ -1,2 +1,150 @@
 /* PTAMesh admin UI: compact, readable */
 #ptamesh-items table.widefat td input { width: 100%; }
+/* ProTraxer branding — admin UI */
+
+:root {
+  --ptx-blue: #0a3a7a;
+  --ptx-blue-600: #0d4a98;
+  --ptx-green: #1bb56b;
+  --ptx-gray-100: #f7f9fc;
+  --ptx-gray-300: #e2e8f0;
+  --ptx-gray-700: #334155;
+  --ptx-text: #1f2937;
+}
+
+/* Global admin wrap */
+.wrap h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ptx-text);
+}
+
+.ptx-brand-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 0 0 16px 0;
+  background: linear-gradient(90deg, var(--ptx-blue), var(--ptx-blue-600));
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.ptx-brand-bar img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.ptx-brand-bar .ptx-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* Cards */
+.ptx-card {
+  background: #fff;
+  border: 1px solid var(--ptx-gray-300);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.ptx-card h2 {
+  margin-top: 0;
+  color: var(--ptx-blue);
+  font-size: 16px;
+}
+
+/* Tables */
+table.widefat.ptx-table {
+  border: 1px solid var(--ptx-gray-300);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table.widefat.ptx-table thead {
+  background: var(--ptx-gray-100);
+}
+
+table.widefat.ptx-table th {
+  color: var(--ptx-text);
+  font-weight: 700;
+}
+
+table.widefat.ptx-table td,
+table.widefat.ptx-table th {
+  padding: 10px 12px;
+}
+
+/* Buttons */
+.button.ptx-primary {
+  background: var(--ptx-blue);
+  border-color: var(--ptx-blue);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button.ptx-primary:hover {
+  background: var(--ptx-blue-600);
+  border-color: var(--ptx-blue-600);
+}
+
+.button.ptx-success {
+  background: var(--ptx-green);
+  border-color: var(--ptx-green);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Notices */
+.notice.ptx-success {
+  border-left-color: var(--ptx-green) !important;
+}
+
+.notice.ptx-info {
+  border-left-color: var(--ptx-blue) !important;
+}
+
+/* Receiving inputs */
+#ptamesh-items input[type="text"],
+#ptamesh-items input[type="number"] {
+  width: 100%;
+  border: 1px solid var(--ptx-gray-300);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+/* Printable */
+.ptx-printable .ptx-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--ptx-blue);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.ptx-printable .ptx-header .ptx-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ptx-blue);
+}
+
+.ptx-printable .ptx-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.ptx-printable .ptx-total {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ptx-blue);
+}

@@ -22,6 +22,7 @@ require_once PTAMESH_DIR . 'includes/class-ptamesh-jobcart.php';
 require_once PTAMESH_DIR . 'includes/class-ptamesh-pricing.php';
 require_once PTAMESH_DIR . 'includes/class-ptamesh-normalize.php';
 require_once PTAMESH_DIR . 'includes/class-ptamesh-admin.php';
+new PTAMesh_Admin();
 
 final class PTAMesh {
   use PTAMesh_Logger, PTAMesh_Security;

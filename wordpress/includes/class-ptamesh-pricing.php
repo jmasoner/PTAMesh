@@ -1,11 +1,34 @@
 <?php
-class PTAMesh_Pricing {
-  private static $instance;
-  public static function instance() { return self::$instance ?? (self::$instance = new self()); }
+/**
+ * PTAMesh Pricing Module
+ * Applies markup rules to product line items.
+ */
 
-  // Default markup: 40%
-  public static function apply_markup($cost, $markup_percent = 40.0) {
-    $cost = floatval($cost);
-    return round($cost * (1.0 + ($markup_percent / 100.0)), 2);
+if (!defined('ABSPATH')) { exit; }
+
+class PTAMesh_Pricing {
+
+  /**
+   * Get default markup percentage (stored as decimal, e.g. 0.15 = 15%)
+   */
+  public static function get_default_markup() {
+    $markup = get_option('ptamesh_default_markup', 0.15);
+    return floatval($markup);
+  }
+
+  /**
+   * Apply markup to a base unit price
+   */
+  public static function apply_markup($base_price) {
+    $markup = self::get_default_markup();
+    return round($base_price * (1 + $markup), 2);
+  }
+
+  /**
+   * Calculate line total with markup
+   */
+  public static function line_total($base_price, $qty) {
+    $unit = self::apply_markup($base_price);
+    return round($unit * $qty, 2);
   }
 }
